@@ -1,0 +1,28 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+>>> import io
+>>> import sys
+>>> output = io.StringIO()
+>>> sys.stdout = output
+>>> say_my_name("John", "Smith")
+>>> result = output.getvalue()  # Capture the result before clearing
+>>> print(result == 'My name is John Smith\n')  # Validate
+True
+>>> output.truncate(0); output.seek(0)  # Clear the buffer for next test
+>>> say_my_name("Walter", "White")
+>>> result = output.getvalue()
+>>> print(result == 'My name is Walter White\n')
+True
+>>> output.truncate(0); output.seek(0)
+>>> say_my_name("Bob")
+>>> result = output.getvalue()
+>>> print(result == 'My name is Bob\n')
+True
+>>> say_my_name(12, "White")  # This should raise an error
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+>>> say_my_name("Walter", 123)  # This should also raise an error
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+>>> sys.stdout = sys.__stdout__  # Reset stdout to normal to prevent redirection
