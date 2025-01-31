@@ -1,10 +1,16 @@
 #!/usr/bin/python3
-"""This module defines a class named 'Square' with a private instance
-attribute 'size'"""
+"""
+This module defines a class named 'Square' with a private instance
+attribute 'size'.
+The class initializes with the 'size' attribute, validating its
+type and value.
+"""
 
 
 class Square:
-    """Defines a square by its 'size', ensuring it's an integer and non-negative"""
+    """
+    Defines a square by its 'size', ensuring it's an integer and non-negative.
+    """
     def __init__(self, size=0):
         """
         Initialize a new Square with size validation.
