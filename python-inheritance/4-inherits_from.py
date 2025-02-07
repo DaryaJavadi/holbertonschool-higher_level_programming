@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Determines if an object is an instance of a subclass of a specified class"""
+"""Determines if an object is an instance of a subclass of a class"""
 
 
 def inherits_from(obj, a_class):
