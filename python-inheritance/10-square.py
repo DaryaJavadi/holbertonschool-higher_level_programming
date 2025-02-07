@@ -26,4 +26,3 @@ class Square(Rectangle):
         height = self._Rectangle__height
         description = f"[Rectangle] {width}/{height}"
         return description
-
