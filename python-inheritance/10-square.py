@@ -9,7 +9,7 @@ class Square(Rectangle):
     Instantiates with size validated as a positive integer"""
 
     def __init__(self, size):
-        """Initializes the Square with size, using it for both width and height,
+        """Initializes the Square with size, using for width and height,
         validated using the integer_validator from Rectangle.
 
         Args:
