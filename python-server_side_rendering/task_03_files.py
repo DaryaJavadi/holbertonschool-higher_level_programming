@@ -61,5 +61,17 @@ def products():
             return render_template('product_display.html', error='Product not found')
     return render_template('product_display.html', products=products)
     
+import requests
+
+def test_invalid_source():
+    url = "http://127.0.0.1:5000/products?source=xml"
+    response = requests.get(url)
+    content = response.text
+
+    print("Response Content:", content)  # Debugging output
+    assert "Wrong source" in content, "Failed: Wrong source error not found"
+
+test_invalid_source()
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
